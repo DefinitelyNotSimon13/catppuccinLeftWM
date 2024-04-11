@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+# Set background
+if [ -x "$(command -v feh)" ]; then
+  feh --bg-fill $SCRIPTPATH/down.jpg
+fi
+
+leftwm-command "UnloadTheme"
+
+
+# Kill procs
+pkill picom &
+pkill compton &
+pkill polybar &
+pkill nm-applet &
+pkill pamac-tray &
+pkill xfce4-power-manager &
+pkill blueberry-tray &
+pkill volumeicon &
+pkill xfce4-notifyd &
+pkill dunst &
+pkill wired &
+pkill sxhkd &
+pkill lxsession &
